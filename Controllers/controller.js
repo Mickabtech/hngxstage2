@@ -35,7 +35,7 @@ exports.updatePerson = async (req, res) => {
     if (!updatedPerson) {
       return res.status(404).json({ error: 'User not found' });
     }
-    res.status(200).json(updatedPerson, {message: 'User successfully updated'});
+    res.status(200).json(updatedPerson);
   } catch (error) {
     res.status(500).json({ error: 'Unable to update a person' });
   }
