@@ -1,4 +1,4 @@
-const User = require('./person'); // Import your Person model
+const User = require('../models/person'); // Import your Person model
 
 // Controller functions
 exports.createPerson = async (req, res) => {
