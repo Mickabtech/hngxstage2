@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
+const userRoutes = require('./Routes/routes');
 
 //cONFIGURING EXPRESS AND DOTENV FOR USE
 const app = express();
@@ -22,6 +23,11 @@ const { MONGO_URI }   = process.env;
         process.exit(1);
       });
  
+
+      //using the routes
+
+      app.use('/api/users', userRoutes);
+      app.use('/api/users/:id', userRoutes);
 
 
 // Creating the server and port
