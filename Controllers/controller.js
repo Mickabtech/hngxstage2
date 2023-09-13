@@ -33,9 +33,9 @@ exports.updatePerson = async (req, res) => {
       { new: true }
     );
     if (!updatedPerson) {
-      return res.status(404).json({ error: 'Person not found' });
+      return res.status(404).json({ error: 'User not found' });
     }
-    res.status(200).json(updatedPerson);
+    res.status(200).json(updatedPerson, {message: 'User successfully updated'});
   } catch (error) {
     res.status(500).json({ error: 'Unable to update a person' });
   }
@@ -47,7 +47,7 @@ exports.deletePerson = async (req, res) => {
     if (!deletedPerson) {
       return res.status(404).json({ error: 'Person not found' });
     }
-    res.status(204).send();
+    res.status(200).json({ message: 'Person deleted successfully' });
   } catch (error) {
     res.status(500).json({ error: 'Unable to delete a person' });
   }
