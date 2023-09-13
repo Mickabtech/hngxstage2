@@ -30,7 +30,6 @@ const { MONGO_URI }   = process.env;
       //using the routes
 
       app.use('/api/users', userRoutes);
-      app.use('/api/users/:id', userRoutes);
 
 
 // Creating the server and port
