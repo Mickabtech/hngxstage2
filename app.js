@@ -25,6 +25,8 @@ const { MONGO_URI }   = process.env;
  
 
       //using the routes
+      app.use(express.json()); // Body parsing middleware
+      app.use('/api', userRoutes); // Define routes
 
       app.use('/api/users', userRoutes);
       app.use('/api/users/:id', userRoutes);
