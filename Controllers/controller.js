@@ -6,7 +6,7 @@ exports.createPerson = async (req, res) => {
     const { name } = req.body;
     const person = new User({ name });
     const savedPerson = await person.save();
-    res.status(201).json({ message: 'User created successfully', User: savedPerson });
+    res.status(201).json({ message: 'User created successfully', user: savedPerson });
   } catch (error) {
     res.status(500).json({ error: 'Unable to create a person' });
   }
