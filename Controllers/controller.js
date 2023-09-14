@@ -8,6 +8,7 @@ exports.createPerson = async (req, res) => {
     const savedPerson = await person.save();
     res.status(201).json({ message: 'User created successfully', user: savedPerson });
   } catch (error) {
+    console.error(error); // Log the error for debugging
     res.status(500).json({ error: 'Unable to create a person' });
   }
 };

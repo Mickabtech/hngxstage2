@@ -9,7 +9,6 @@ const userRoutes = require('./Routes/routes');
 const app = express();
 dotenv.config();
 
-app.use(bodyParser.json());
 
 // Connect to MongoDB
 const { MONGO_URI }   = process.env;
@@ -28,6 +27,8 @@ const { MONGO_URI }   = process.env;
  
 
       //using the routes
+
+      app.use(bodyParser.json());
 
       app.use('/api/users', userRoutes);
 
